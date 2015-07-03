@@ -1,0 +1,651 @@
+input {
+    box-shadow: none;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+.sheet-WrapperAll {
+    position: relative;
+    width: 677px;
+    min-width: 677px;
+}
+.charsheet * {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+.charsheet * *{
+    position: absolute;
+}
+.sheet-WrapperInfo .sheet-Info {
+    top: 22px;
+    height: 30px;
+    width: 90px;
+}
+.sheet-WrapperInfo .sheet-Name {
+    left: 27px;
+    width: 185px;
+}
+.sheet-WrapperInfo .sheet-Race {
+    left: 243px;
+}
+.sheet-WrapperInfo .sheet-Size {
+    left: 341px;
+    text-align: right;
+}
+.sheet-WrapperInfo .sheet-Vision {
+    left: 461px;
+}
+.sheet-WrapperInfo .sheet-Gender {
+    left: 560px;
+    text-align: right;
+}
+
+.sheet-WrapperStats .sheet-Stats {
+    top: 143px;
+    height: 15px;
+    width: 29px!important;
+    text-align: center;
+    padding: 0;
+    border: none;
+}
+.sheet-WrapperStats .sheet-Strength {
+    left: 36px;
+}
+.sheet-WrapperStats .sheet-Dexterity {
+    left: 150px;
+}
+.sheet-WrapperStats .sheet-Constitution {
+    left: 265px;
+}
+.sheet-WrapperStats .sheet-Intelligence {
+    left: 380px;
+}
+.sheet-WrapperStats .sheet-Wisdom {
+    left: 495px;
+}
+.sheet-WrapperStats .sheet-Charisma {
+    left: 608px;
+}
+
+.sheet-WrapperModifiers .sheet-Modifiers {
+    top: 111px;
+    height: 30px;
+    width: 40px!important;
+    border: none;
+    padding: 0;
+    background: transparent;
+    text-align: center;
+    font-size: x-large;
+}
+.sheet-WrapperModifiers .sheet-STR {
+    left: 30px;
+}
+.sheet-WrapperModifiers .sheet-DEX {
+    left: 145px;
+}
+.sheet-WrapperModifiers .sheet-CON {
+    left: 260px;
+}
+.sheet-WrapperModifiers .sheet-INT {
+    left: 374px;
+}
+.sheet-WrapperModifiers .sheet-WIS {
+    left: 489px;
+}
+.sheet-WrapperModifiers .sheet-CHA {
+    left: 603px;
+}
+
+.sheet-AbilityChecks * .sheet-AbilityBoxes {
+    height: 8px!important;
+    width: 8px!important;
+}
+.sheet-AbilityChecks * .sheet-AbilityButton {
+    height: 12px!important;
+    width: 12px!important;
+    padding: 0!important;
+    margin: 0!important;
+    left: 15px;
+}
+
+.sheet-AbilityChecks .sheet-WrapperSTRThrows {
+    left: 74px;
+}
+.sheet-AbilityChecks .sheet-WrapperSTRThrows .sheet-STRSave {
+    top: 200px;
+}
+.sheet-AbilityChecks .sheet-WrapperSTRThrows .sheet-Athletics {
+    top: 212px;
+}
+.sheet-AbilityChecks .sheet-WrapperSTRThrows .sheet-STRSaveButton {
+    top: 197px;
+}
+.sheet-AbilityChecks .sheet-WrapperSTRThrows .sheet-AthleticsButton {
+    top: 209px;
+}
+
+.sheet-AbilityChecks .sheet-WrapperDEXThrows {
+    left: 189px;
+}
+.sheet-AbilityChecks .sheet-WrapperDEXThrows .sheet-DEXSave {
+    top: 188px;
+}
+.sheet-AbilityChecks .sheet-WrapperDEXThrows .sheet-Acrobatics {
+    top: 200px;
+}
+.sheet-AbilityChecks .sheet-WrapperDEXThrows .sheet-SleightOfHand {
+    top: 212px;
+}
+.sheet-AbilityChecks .sheet-WrapperDEXThrows .sheet-Stealth {
+    top: 224px;
+}
+.sheet-AbilityChecks .sheet-WrapperDEXThrows .sheet-DEXSaveButton {
+    top: 185px;
+}
+.sheet-AbilityChecks .sheet-WrapperDEXThrows .sheet-AcrobaticsButton {
+    top: 197px;
+}
+.sheet-AbilityChecks .sheet-WrapperDEXThrows .sheet-SleightOfHandButton {
+    top: 209px;
+}
+.sheet-AbilityChecks .sheet-WrapperDEXThrows .sheet-StealthButton {
+    top: 221px;
+}
+
+.sheet-AbilityChecks .sheet-WrapperCONThrows {
+    left: 303px;
+}
+.sheet-AbilityChecks .sheet-WrapperCONThrows .sheet-CONSave {
+    top: 206px;
+}
+.sheet-AbilityChecks .sheet-WrapperCONThrows .sheet-CONSaveButton {
+    top: 203px;
+}
+
+.sheet-AbilityChecks .sheet-WrapperINTThrows {
+    left: 417px;
+}
+.sheet-AbilityChecks .sheet-WrapperINTThrows .sheet-INTSave {
+    top: 176px;
+}
+.sheet-AbilityChecks .sheet-WrapperINTThrows .sheet-Arcana {
+    top: 188px;
+}
+.sheet-AbilityChecks .sheet-WrapperINTThrows .sheet-History {
+    top: 200px;
+}
+.sheet-AbilityChecks .sheet-WrapperINTThrows .sheet-Investigation {
+    top: 212px;
+}
+.sheet-AbilityChecks .sheet-WrapperINTThrows .sheet-Nature {
+    top: 224px;
+}
+.sheet-AbilityChecks .sheet-WrapperINTThrows .sheet-Religion {
+    top: 236px;
+}
+.sheet-AbilityChecks .sheet-WrapperINTThrows .sheet-INTSaveButton {
+    top: 173px;
+}
+.sheet-AbilityChecks .sheet-WrapperINTThrows .sheet-ArcanaButton {
+    top: 185px;
+}
+.sheet-AbilityChecks .sheet-WrapperINTThrows .sheet-HistoryButton {
+    top: 197px;
+}
+.sheet-AbilityChecks .sheet-WrapperINTThrows .sheet-InvestigationButton {
+    top: 209px;
+}
+.sheet-AbilityChecks .sheet-WrapperINTThrows .sheet-NatureButton {
+    top: 221px;
+}
+.sheet-AbilityChecks .sheet-WrapperINTThrows .sheet-ReligionButton {
+    top: 233px;
+}
+
+.sheet-AbilityChecks .sheet-WrapperWISThrows {
+    left: 532px;
+}
+.sheet-AbilityChecks .sheet-WrapperWISThrows .sheet-WISSave {
+    top: 176px;
+}
+.sheet-AbilityChecks .sheet-WrapperWISThrows .sheet-AnimalHandling {
+    top: 188px;
+}
+.sheet-AbilityChecks .sheet-WrapperWISThrows .sheet-Insight {
+    top: 200px;
+}
+.sheet-AbilityChecks .sheet-WrapperWISThrows .sheet-Medicine {
+    top: 212px;
+}
+.sheet-AbilityChecks .sheet-WrapperWISThrows .sheet-Perception {
+    top: 224px;
+}
+.sheet-AbilityChecks .sheet-WrapperWISThrows .sheet-Survival {
+    top: 236px;
+}
+.sheet-AbilityChecks .sheet-WrapperWISThrows .sheet-WISSaveButton {
+    top: 173px;
+}
+.sheet-AbilityChecks .sheet-WrapperWISThrows .sheet-AnimalHandlingButton {
+    top: 185px;
+}
+.sheet-AbilityChecks .sheet-WrapperWISThrows .sheet-InsightButton {
+    top: 197px;
+}
+.sheet-AbilityChecks .sheet-WrapperWISThrows .sheet-MedicineButton {
+    top: 209px;
+}
+.sheet-AbilityChecks .sheet-WrapperWISThrows .sheet-PerceptionButton {
+    top: 221px;
+}
+.sheet-AbilityChecks .sheet-WrapperWISThrows .sheet-SurvivalButton {
+    top: 233px;
+}
+
+.sheet-AbilityChecks .sheet-WrapperCHAThrows {
+    left: 646px;
+}
+.sheet-AbilityChecks .sheet-WrapperCHAThrows .sheet-CHASave {
+    top: 182px;
+}
+.sheet-AbilityChecks .sheet-WrapperCHAThrows .sheet-Deception {
+    top: 194px;
+}
+.sheet-AbilityChecks .sheet-WrapperCHAThrows .sheet-Intimidation {
+    top: 206px;
+}
+.sheet-AbilityChecks .sheet-WrapperCHAThrows .sheet-Performance {
+    top: 218px;
+}
+.sheet-AbilityChecks .sheet-WrapperCHAThrows .sheet-Persuasion {
+    top: 230px;
+}
+.sheet-AbilityChecks .sheet-WrapperCHAThrows .sheet-CHASaveButton {
+    top: 179px;
+}
+.sheet-AbilityChecks .sheet-WrapperCHAThrows .sheet-DeceptionButton {
+    top: 191px;
+}
+.sheet-AbilityChecks .sheet-WrapperCHAThrows .sheet-IntimidationButton {
+    top: 203px;
+}
+.sheet-AbilityChecks .sheet-WrapperCHAThrows .sheet-PerformanceButton {
+    top: 215px;
+}
+.sheet-AbilityChecks .sheet-WrapperCHAThrows .sheet-PersuasionButton {
+    top: 227px;
+}
+
+.sheet-Proficiency {
+    top: 271px;
+    left: 19px;
+    height: 30px!important;
+    width: 30px!important;
+    border: none;
+    padding:0;
+    box-shadow: none;
+    background: transparent;
+    text-align: center;
+    font-size: x-large;
+}
+.sheet-Inspiration {
+    top: 322px;
+    left: 19px;
+    height: 30px!important;
+    width: 30px!important;
+    border: none;
+    padding:0;
+}
+
+.sheet-CombatInfo * {
+    height: 40px!important;
+    width: 40px!important;
+    background: transparent;
+    background: rgba(255, 255, 255, 0.62);
+    line-height: 0;
+    font-size: x-large;
+    text-align: center;
+}
+.sheet-AC {
+    top: 385px;
+    left: 34px;
+}
+.sheet-UAC {
+    top: 385px;
+    left: 111px;
+}
+.sheet-Initiative {
+    top: 460px;
+    left: 34px;
+}
+.sheet-Speed {
+    top: 460px;
+    left: 111px;
+}
+
+.sheet-HealthInfo {
+    top: 297px;
+    left: 206px;
+}
+.sheet-HealthInfo * {
+    height: 18px!important;
+    width: 70px!important;
+    border: none;
+    padding:0;
+    box-shadow: none;
+    background: rgb(210, 210, 210);
+    text-align: center;
+    
+}
+.sheet-HealthInfo .sheet-THP {
+    left: 74px;
+}
+.sheet-HealthInfo .sheet-CHP {
+    height: 36px!important;
+    width: 144px!important;
+    top: 35px;
+    font-size: x-large;
+}
+
+.sheet-BoxOne {
+    top: 296px;
+    width: 125px!important;
+    height: 42px!important;
+    border: none;
+    padding: 5px;
+    box-shadow: none;
+    background: white;
+}
+.sheet-ResImSave {
+    left: 370px;
+}
+.sheet-ClassFeatures {
+    left: 522px;
+}
+
+.sheet-HitDiceInfo {
+    top: 413px;
+    left: 209px
+}
+.sheet-HitDice {
+    height: 10px!important;
+    width: 16px!important;
+    padding: 0;
+    font-size: xx-small;
+    text-align: center;
+    line-height: 0;
+}
+.sheet-d6Max, .sheet-d8Max, .sheet-d10Max, .sheet-d12Max {
+    left: 25px;
+}
+.sheet-d8Current, .sheet-d8Max {
+    top: 10px;
+}
+.sheet-d10Current, .sheet-d10Max {
+    top: 20px;
+}
+.sheet-d12Current, .sheet-d12Max {
+    top: 30px;
+}
+
+.sheet-DeathSaves {
+    top: 414px;
+    left: 296px;
+}
+.sheet-DeathSaves * {
+    width: 8px!important;
+    height: 8px!important;
+}
+.sheet-Fail1, .sheet-Fail2, .sheet-Fail3 {
+    top: 20px;
+}
+.sheet-Success2, .sheet-Fail2 {
+    left: 21px;
+}
+.sheet-Success3, .sheet-Fail3 {
+    left: 41px;
+}
+
+.sheet-Abilities {
+    top: 395px;
+    left: 372px;
+}
+.sheet-Abilities * {
+    height: 16px!important;
+    padding: 0;
+    line-height: 0;
+    font-size: smaller;
+    background: transparent;
+}
+.sheet-AbilityNames {
+    width: 190px!important;
+    padding: 0 5px;
+}
+.sheet-AbilityUsesCurrent, .sheet-AbilityUsesMax {
+    width: 20px!important;
+    text-align: center;
+}
+.sheet-AbilityUsesCurrent {
+    left: 197px;
+}
+.sheet-AbilityUsesMax {
+    left: 220px;
+}
+.sheet-AbilityRests {
+    width: 64px!important;
+    left: 241px;
+}
+.sheet-AbilityName2, .sheet-AbilityUseCurrent2, .sheet-AbilityUseMax2,  .sheet-AbilityRest2 {
+   top: 17px 
+}
+.sheet-AbilityName3, .sheet-AbilityUseCurrent3, .sheet-AbilityUseMax3,  .sheet-AbilityRest3 {
+   top: 34px 
+}
+.sheet-AbilityName4, .sheet-AbilityUseCurrent4, .sheet-AbilityUseMax4,  .sheet-AbilityRest4 {
+   top: 51px 
+}
+
+.sheet-MeleeWeapons {
+    top: 514px;
+    left: 192px;
+}
+.sheet-RangedWeapons {
+    top: 634px;
+    left: 192px;
+}
+.sheet-MeleeWeapons *, .sheet-RangedWeapons * {
+    height: 15px!important;
+    padding: 0;
+    font-size: smaller;
+    line-height: 0;
+}
+.sheet-Melee2, .sheet-Ranged2 {
+    top: 16px;
+}
+.sheet-Melee3, .sheet-Ranged3 {
+    top: 32px;
+}
+.sheet-Melee4 {
+    top: 48px;
+}
+.sheet-W1 {
+    width: 118px;
+    padding: 0 5px;
+}
+.sheet-W2 {
+    width: 40px;
+    left: 122px;
+    text-align: center;
+}
+.sheet-W3 {
+    width: 40px;
+    left: 165px;
+    text-align: center;
+}
+.sheet-W4 {
+    width: 57px;
+    left: 209px;
+    text-align: center;
+}
+.sheet-W5 {
+    width: 57px;
+    left: 270px;
+    text-align: center;
+}
+.sheet-W6 {
+    width: 34px;
+    left: 330px;
+    text-align: center;
+}
+.sheet-W7 {
+    width: 98px;
+    left: 367px;
+    padding: 0 5px;
+}
+.sheet-WeaponRoll {
+    width: 15px!important;
+    left: 470px;
+}
+
+.sheet-Ammo {
+    top: 720px;
+    left: 192px;
+}
+.sheet-Ammo * * {
+    position: relative;
+}
+.sheet-Ammo1 {
+    width: 465px;
+}
+.sheet-Ammo2 {
+    width: 465px;
+    top: 17px;
+}
+.sheet-AmmoName {
+    width: 59px!important;
+    height: 16px!important;
+    padding: 0 5px;
+    font-size: smaller;
+    line-height: 0;
+}
+.sheet-AmmoBox {
+    margin-right: 8.23px;
+    width: 8px!important;
+    height: 8px!important;
+    top: 1px;
+    left: 4px;
+}
+
+.sheet-BoxTwo {
+    width: 133px!important;
+    height: 50px!important;
+    left: 21px;
+    border: none;
+    padding: 5px;
+    box-shadow: none;
+    background: white;
+}
+.sheet-Languages {
+    top: 550px;
+}
+.sheet-Proficiencies {
+    top: 641px;
+}
+
+.sheet-LevelInfo {
+    top: 746px;
+    left: 21px;
+}
+.sheet-LevelInfo * {
+    padding: 0 5px;
+    line-height: 0;
+    font-size: smaller;
+    height: 16px!important;
+}
+.sheet-Classes {
+    width: 80px!important;
+}
+.sheet-Levels {
+    width: 50px!important;
+    left: 94px;
+    text-align: right;
+}
+.sheet-Class2, .sheet-Level2 {
+    top: 17px;
+}
+.sheet-Class3, .sheet-Level3 {
+    top: 34px;
+}
+.sheet-CurrentLevel, .sheet-CurrentEXP, .sheet-NextLevel {
+    width: 63px!important;
+    left: 81px;
+    text-align: right;
+    height: 15px!important;
+}
+.sheet-CurrentLevel {
+    top: 55px;
+    border: none;
+    background: transparent;
+}
+.sheet-CurrentEXP {
+    top: 70px;
+}
+.sheet-NextLevel {
+    top: 85px;
+    border: none;
+    background: transparent;
+}
+
+.sheet-SpellcastingInfo {
+    top: 807px;
+    left: 190px;
+}
+.sheet-SpellcastingInfo * {
+    height: 30px!important;
+    width: 107px!important;
+    font-size: larger;
+    text-align: center;
+    padding: 0;
+}
+.sheet-SpellcastingAbility {
+}
+.sheet-SpellAttack {
+    left: 109px;
+}
+.sheet-SpellAttackButton {
+    left: 216px;
+    width: 30px!important;
+}
+.sheet-SpellSave {
+    left: 253px;    
+}
+.sheet-SpellPrepared {
+    left: 361px;
+}
+
+.sheet-SpellSlots {
+    top: 895px;
+    left: 94px;
+}
+.sheet-SpellUses, .sheet-SpellTotal {
+    width: 600px;
+}
+.sheet-SpellTotal {
+    top: 17px;
+}
+.sheet-SpellSlots * * {
+    position: relative;
+    width: 39px!important;
+    height: 16px!important;
+    padding: 0;
+    line-height: 0;
+    text-align: center;
+    margin-right: 19.4px;
+}
