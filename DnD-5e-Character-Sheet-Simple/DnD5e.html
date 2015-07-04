@@ -8,12 +8,12 @@
         <input class = "sheet-Gender sheet-Info" type = "text" name = "attr_Gender"/>
     </div>
     <div class = "sheet-WrapperStats">
-        <input class = "sheet-Strength sheet-Stats" type = "number" name = "attr_Strength" step = "1"/>
-        <input class = "sheet-Dexterity sheet-Stats" type = "number" name = "attr_Dexterity" step = "1"/>
-        <input class = "sheet-Constitution sheet-Stats" type = "number" name = "attr_Constitution" step = "1"/>
-        <input class = "sheet-Intelligence sheet-Stats" type = "number" name = "attr_Intelligence" step = "1"/>
-        <input class = "sheet-Wisdom sheet-Stats" type = "number" name = "attr_Wisdom" step = "1"/>
-        <input class = "sheet-Charisma sheet-Stats" type = "number" name = "attr_Charisma" step = "1"/>
+        <input class = "sheet-Strength sheet-Stats" type = "number" name = "attr_Strength" step = "1" min = "0" />
+        <input class = "sheet-Dexterity sheet-Stats" type = "number" name = "attr_Dexterity" step = "1" min = "0" />
+        <input class = "sheet-Constitution sheet-Stats" type = "number" name = "attr_Constitution" step = "1" min = "0" />
+        <input class = "sheet-Intelligence sheet-Stats" type = "number" name = "attr_Intelligence" step = "1" min = "0" />
+        <input class = "sheet-Wisdom sheet-Stats" type = "number" name = "attr_Wisdom" step = "1" min = "0" />
+        <input class = "sheet-Charisma sheet-Stats" type = "number" name = "attr_Charisma" step = "1" min = "0" />
     </div>
     <div class = "sheet-WrapperModifiers">
         <input class = "sheet-STR sheet-Modifiers" type = "number" name = "attr_STR" disabled = "true" value = "[[floor((@{Strength}-10)/2)]]"/>
@@ -25,32 +25,32 @@
     </div>
     <div class = "sheet-AbilityChecks">
         <div class = "sheet-WrapperSTRThrows">
-            <input class = "sheet-STRSave sheet-AbilityBoxes" type = "checkbox" name = "attr_STR_Save" value = "@{Proficiency}"/>
-            <input class = "sheet-Athletics sheet-AbilityBoxes" type = "checkbox" name = "attr_Athletics" value = "@{Proficiency}"/>
+            <input class = "sheet-STRSave sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Athletics sheet-AbilityBoxes" type = "checkbox" />
             <button class = "sheet-STRSaveButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Strength Save}} {{Not Proficient=[[d20+@{STR}]]|[[d20+@{STR}]]}}{{Proficient=[[d20+@{STR}+@{Proficiency}]]|[[d20+@{STR}+@{Proficiency}]]}} {{Expert=[[d20+@{STR}+@{Proficiency}+@{Proficiency}]]|[[d20+@{STR}+@{Proficiency}+@{Proficiency}]]}}"/>
             <button class = "sheet-AthleticsButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Athletics}} {{Not Proficient=[[d20+@{STR}]]|[[d20+@{STR}]]}}{{Proficient=[[d20+@{STR}+@{Proficiency}]]|[[d20+@{STR}+@{Proficiency}]]}} {{Expert=[[d20+@{STR}+@{Proficiency}+@{Proficiency}]]|[[d20+@{STR}+@{Proficiency}+@{Proficiency}]]}"/>
         </div>
         <div class = "sheet-WrapperDEXThrows">
-            <input class = "sheet-DEXSave sheet-AbilityBoxes" type = "checkbox" name = "attr_DEX_Save" value = "@{Proficiency}"/>
-            <input class = "sheet-Acrobatics sheet-AbilityBoxes" type = "checkbox" name = "attr_Acrobatics" value = "@{Proficiency}"/>
-            <input class = "sheet-SleightOfHand sheet-AbilityBoxes" type = "checkbox" name = "attr_SleightOfHand" value = "@{Proficiency}"/>
-            <input class = "sheet-Stealth sheet-AbilityBoxes" type = "checkbox" name = "attr_Stealth" value = "@{Proficiency}"/>
+            <input class = "sheet-DEXSave sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Acrobatics sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-SleightOfHand sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Stealth sheet-AbilityBoxes" type = "checkbox" />
             <button class = "sheet-DEXSaveButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Dexterity Save}} {{Not Proficient=[[d20+@{DEX}]]|[[d20+@{DEX}]]}}{{Proficient=[[d20+@{DEX}+@{Proficiency}]]|[[d20+@{DEX}+@{Proficiency}]]}} {{Expert=[[d20+@{DEX}+@{Proficiency}+@{Proficiency}]]|[[d20+@{DEX}+@{Proficiency}+@{Proficiency}]]}}"/>
             <button class = "sheet-AcrobaticsButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Acrobatics}} {{Not Proficient=[[d20+@{DEX}]]|[[d20+@{DEX}]]}}{{Proficient=[[d20+@{DEX}+@{Proficiency}]]|[[d20+@{DEX}+@{Proficiency}]]}} {{Expert=[[d20+@{DEX}+@{Proficiency}+@{Proficiency}]]|[[d20+@{DEX}+@{Proficiency}+@{Proficiency}]]}}"/>
             <button class = "sheet-SleightOfHandButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Sleight of Hand}} {{Not Proficient=[[d20+@{DEX}]]|[[d20+@{DEX}]]}}{{Proficient=[[d20+@{DEX}+@{Proficiency}]]|[[d20+@{DEX}+@{Proficiency}]]}} {{Expert=[[d20+@{DEX}+@{Proficiency}+@{Proficiency}]]|[[d20+@{DEX}+@{Proficiency}+@{Proficiency}]]}}"/>
             <button class = "sheet-StealthButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Stealth}} {{Not Proficient=[[d20+@{DEX}]]|[[d20+@{DEX}]]}}{{Proficient=[[d20+@{DEX}+@{Proficiency}]]|[[d20+@{DEX}+@{Proficiency}]]}} {{Expert=[[d20+@{DEX}+@{Proficiency}+@{Proficiency}]]|[[d20+@{DEX}+@{Proficiency}+@{Proficiency}]]}}"/>
         </div>
         <div class = "sheet-WrapperCONThrows">
-            <input class = "sheet-CONSave sheet-AbilityBoxes" type = "checkbox" name = "attr_CON_Save" value = "@{Proficiency}"/>
+            <input class = "sheet-CONSave sheet-AbilityBoxes" type = "checkbox" />
             <button class = "sheet-CONSaveButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Constitution Save}} {{Not Proficient=[[d20+@{CON}]]|[[d20+@{CON}]]}}{{Proficient=[[d20+@{CON}+@{Proficiency}]]|[[d20+@{CON}+@{Proficiency}]]}} {{Expert=[[d20+@{CON}+@{Proficiency}+@{Proficiency}]]|[[d20+@{CON}+@{Proficiency}+@{Proficiency}]]}}"/>
         </div>
         <div class = "sheet-WrapperINTThrows">
-            <input class = "sheet-INTSave sheet-AbilityBoxes" type = "checkbox" name = "attr_INT_Save" value = "@{Proficiency}"/>
-            <input class = "sheet-Arcana sheet-AbilityBoxes" type = "checkbox" name = "attr_Arcana" value = "@{Proficiency}"/>
-            <input class = "sheet-History sheet-AbilityBoxes" type = "checkbox" name = "attr_History" value = "@{Proficiency}"/>
-            <input class = "sheet-Investigation sheet-AbilityBoxes" type = "checkbox" name = "attr_Investigation" value = "@{Proficiency}"/>
-            <input class = "sheet-Nature sheet-AbilityBoxes" type = "checkbox" name = "attr_Nature" value = "@{Proficiency}"/>
-            <input class = "sheet-Religion sheet-AbilityBoxes" type = "checkbox" name = "attr_Religion" value = "@{Proficiency}"/>
+            <input class = "sheet-INTSave sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Arcana sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-History sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Investigation sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Nature sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Religion sheet-AbilityBoxes" type = "checkbox" />
             <button class = "sheet-INTSaveButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Intelligence Save}} {{Not Proficient=[[d20+@{INT}]]|[[d20+@{INT}]]}}{{Proficient=[[d20+@{INT}+@{Proficiency}]]|[[d20+@{INT}+@{Proficiency}]]}} {{Expert=[[d20+@{INT}+@{Proficiency}+@{Proficiency}]]|[[d20+@{INT}+@{Proficiency}+@{Proficiency}]]}}"/>
             <button class = "sheet-ArcanaButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Arcana}} {{Not Proficient=[[d20+@{INT}]]|[[d20+@{INT}]]}}{{Proficient=[[d20+@{INT}+@{Proficiency}]]|[[d20+@{INT}+@{Proficiency}]]}} {{Expert=[[d20+@{INT}+@{Proficiency}+@{Proficiency}]]|[[d20+@{INT}+@{Proficiency}+@{Proficiency}]]}}"/>
             <button class = "sheet-HistoryButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=History}} {{Not Proficient=[[d20+@{INT}]]|[[d20+@{INT}]]}}{{Proficient=[[d20+@{INT}+@{Proficiency}]]|[[d20+@{INT}+@{Proficiency}]]}} {{Expert=[[d20+@{INT}+@{Proficiency}+@{Proficiency}]]|[[d20+@{INT}+@{Proficiency}+@{Proficiency}]]}}"/>
@@ -59,12 +59,12 @@
             <button class = "sheet-ReligionButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Religion}} {{Not Proficient=[[d20+@{INT}]]|[[d20+@{INT}]]}}{{Proficient=[[d20+@{INT}+@{Proficiency}]]|[[d20+@{INT}+@{Proficiency}]]}} {{Expert=[[d20+@{INT}+@{Proficiency}+@{Proficiency}]]|[[d20+@{INT}+@{Proficiency}+@{Proficiency}]]}}"/>
         </div>
         <div class = "sheet-WrapperWISThrows">
-            <input class = "sheet-WISSave sheet-AbilityBoxes" type = "checkbox" name = "attr_WIS_Save" value = "@{Proficiency}"/>
-            <input class = "sheet-AnimalHandling sheet-AbilityBoxes" type = "checkbox" name = "attr_AnimalHandling" value = "@{Proficiency}"/>
-            <input class = "sheet-Insight sheet-AbilityBoxes" type = "checkbox" name = "attr_Insight" value = "@{Proficiency}"/>
-            <input class = "sheet-Medicine sheet-AbilityBoxes" type = "checkbox" name = "attr_Medicine" value = "@{Proficiency}"/>
-            <input class = "sheet-Perception sheet-AbilityBoxes" type = "checkbox" name = "attr_Perception" value = "@{Proficiency}"/>
-            <input class = "sheet-Survival sheet-AbilityBoxes" type = "checkbox" name = "attr_Survival" value = "@{Proficiency}"/>
+            <input class = "sheet-WISSave sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-AnimalHandling sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Insight sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Medicine sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Perception sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Survival sheet-AbilityBoxes" type = "checkbox" />
             <button class = "sheet-WISSaveButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Wisdom Save}} {{Not Proficient=[[d20+@{WIS}]]|[[d20+@{WIS}]]}}{{Proficient=[[d20+@{WIS}+@{Proficiency}]]|[[d20+@{WIS}+@{Proficiency}]]}} {{Expert=[[d20+@{WIS}+@{Proficiency}+@{Proficiency}]]|[[d20+@{WIS}+@{Proficiency}+@{Proficiency}]]}}"/>
             <button class = "sheet-AnimalHandlingButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Animal Handling}} {{Not Proficient=[[d20+@{WIS}]]|[[d20+@{WIS}]]}}{{Proficient=[[d20+@{WIS}+@{Proficiency}]]|[[d20+@{WIS}+@{Proficiency}]]}} {{Expert=[[d20+@{WIS}+@{Proficiency}+@{Proficiency}]]|[[d20+@{WIS}+@{Proficiency}+@{Proficiency}]]}}"/>
             <button class = "sheet-InsightButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Insight}} {{Not Proficient=[[d20+@{WIS}]]|[[d20+@{WIS}]]}}{{Proficient=[[d20+@{WIS}+@{Proficiency}]]|[[d20+@{WIS}+@{Proficiency}]]}} {{Expert=[[d20+@{WIS}+@{Proficiency}+@{Proficiency}]]|[[d20+@{WIS}+@{Proficiency}+@{Proficiency}]]}}"/>
@@ -73,11 +73,11 @@
             <button class = "sheet-SurvivalButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Survival}} {{Not Proficient=[[d20+@{WIS}]]|[[d20+@{WIS}]]}}{{Proficient=[[d20+@{WIS}+@{Proficiency}]]|[[d20+@{WIS}+@{Proficiency}]]}} {{Expert=[[d20+@{WIS}+@{Proficiency}+@{Proficiency}]]|[[d20+@{WIS}+@{Proficiency}+@{Proficiency}]]}}"/>
         </div>
         <div class = "sheet-WrapperCHAThrows">
-            <input class = "sheet-CHASave sheet-AbilityBoxes" type = "checkbox" name = "attr_CHA_Save" value = "@{Proficiency}"/>
-            <input class = "sheet-Deception sheet-AbilityBoxes" type = "checkbox" name = "attr_Deception" value = "@{Proficiency}"/>
-            <input class = "sheet-Intimidation sheet-AbilityBoxes" type = "checkbox" name = "attr_Intimidation" value = "@{Proficiency}"/>
-            <input class = "sheet-Performance sheet-AbilityBoxes" type = "checkbox" name = "attr_Performance" value = "@{Proficiency}"/>
-            <input class = "sheet-Persuasion sheet-AbilityBoxes" type = "checkbox" name = "attr_Persuasion" value = "@{Proficiency}"/>
+            <input class = "sheet-CHASave sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Deception sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Intimidation sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Performance sheet-AbilityBoxes" type = "checkbox" />
+            <input class = "sheet-Persuasion sheet-AbilityBoxes" type = "checkbox" />
             <button class = "sheet-CHASaveButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Charisma Save}} {{Not Proficient=[[d20+@{CHA}]]|[[d20+@{CHA}]]}}{{Proficient=[[d20+@{CHA}+@{Proficiency}]]|[[d20+@{CHA}+@{Proficiency}]]}} {{Expert=[[d20+@{CHA}+@{Proficiency}+@{Proficiency}]]|[[d20+@{CHA}+@{Proficiency}+@{Proficiency}]]}}"/>
             <button class = "sheet-DeceptionButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Deception}} {{Not Proficient=[[d20+@{CHA}]]|[[d20+@{CHA}]]}}{{Proficient=[[d20+@{CHA}+@{Proficiency}]]|[[d20+@{CHA}+@{Proficiency}]]}} {{Expert=[[d20+@{CHA}+@{Proficiency}+@{Proficiency}]]|[[d20+@{CHA}+@{Proficiency}+@{Proficiency}]]}}"/>
             <button class = "sheet-IntimidationButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Intimidation}} {{Not Proficient=[[d20+@{CHA}]]|[[d20+@{CHA}]]}}{{Proficient=[[d20+@{CHA}+@{Proficiency}]]|[[d20+@{CHA}+@{Proficiency}]]}} {{Expert=[[d20+@{CHA}+@{Proficiency}+@{Proficiency}]]|[[d20+@{CHA}+@{Proficiency}+@{Proficiency}]]}}"/>
@@ -85,8 +85,7 @@
             <button class = "sheet-PersuasionButton sheet-AbilityButton" type = "roll" value = "&{template:default} {{name=Persuasion}} {{Not Proficient=[[d20+@{CHA}]]|[[d20+@{CHA}]]}}{{Proficient=[[d20+@{CHA}+@{Proficiency}]]|[[d20+@{CHA}+@{Proficiency}]]}} {{Expert=[[d20+@{CHA}+@{Proficiency}+@{Proficiency}]]|[[d20+@{CHA}+@{Proficiency}+@{Proficiency}]]}}"/>
         </div>
     </div>
-    <input class = "sheet-Proficiency" type = "number" name = "attr_Proficiency" disabled = "true" value = "[[ceil(((@{Level})/4)+1)]]" />
-    <input class = "sheet-Inspiration" type = "checkbox" name = "attr_Inspiration" value = "1" />
+    <input class = "sheet-Inspiration" type = "checkbox" />
     <div class = "sheet-CombatInfo">
         <input class = "sheet-AC" type = "number" name = "attr_AC" value = "0" />
         <input class = "sheet-UAC" type = "number" name = "attr_Unarmored_AC" value = "0" />
@@ -101,14 +100,14 @@
     <textarea class = "sheet-ResImSave sheet-BoxOne" type = "text">Text Goes Here</textarea>
     <textarea class = "sheet-ClassFeatures sheet-BoxOne" type = "text">Text Goes Here</textarea>
     <div class = "sheet-HitDiceInfo">
-        <input class = "sheet-d6Current sheet-HitDice" type = "number" name = "attr_d6_Current" value = "0" />
-        <input class = "sheet-d6Max sheet-HitDice" type = "number" name = "attr_d6_Max" value = "0" />
-        <input class = "sheet-d8Current sheet-HitDice" type = "number" name = "attr_d8_Current" value = "0" />
-        <input class = "sheet-d8Max sheet-HitDice" type = "number" name = "attr_d8_Max" value = "0" />
-        <input class = "sheet-d10Max sheet-HitDice" type = "number" name = "attr_d10_Max" value = "0" />
-        <input class = "sheet-d10Current sheet-HitDice" type = "number" name = "attr_d10_Current" value = "0" />
-        <input class = "sheet-d12Max sheet-HitDice" type = "number" name = "attr_d12_Max" value = "0" />
-        <input class = "sheet-d12Current sheet-HitDice" type = "number" name = "attr_d12_Current" value = "0" />
+        <input class = "sheet-d6Current sheet-HitDice" type = "number" value = "0" />
+        <input class = "sheet-d6Max sheet-HitDice" type = "number" value = "0" />
+        <input class = "sheet-d8Current sheet-HitDice" type = "number" value = "0" />
+        <input class = "sheet-d8Max sheet-HitDice" type = "number" value = "0" />
+        <input class = "sheet-d10Max sheet-HitDice" type = "number" value = "0" />
+        <input class = "sheet-d10Current sheet-HitDice" type = "number" value = "0" />
+        <input class = "sheet-d12Max sheet-HitDice" type = "number" value = "0" />
+        <input class = "sheet-d12Current sheet-HitDice" type = "number" value = "0" />
     </div>
     <div class = "sheet-DeathSaves">
         <input class = "sheet-Success1" type = "checkbox" />
@@ -270,9 +269,9 @@
         <input class = "sheet-Levels sheet-Level2" type = "number" />
         <input class = "sheet-Classes sheet-Class3" type = "text" />
         <input class = "sheet-Levels sheet-Level3" type = "number" />
-        <input class = "sheet-CurrentLevel" type = "number" name = "attr_Level" value = "@{Level}" disabled = "true" />
-        <input class = "sheet-CurrentEXP" type = "number" name = "attr_Experience" />
-        <input class = "sheet-NextLevel" type = "number" name = "attr_NextLevel" value = "@{NextLevel}" disabled = "true" />
+        <input class = "sheet-CurrentEXP" type = "number" name = "attr_Experience" value = "0" />
+        <input class = "sheet-CurrentLevel" type = "number" name = "attr_Level" value = "1" />
+        <input class = "sheet-NextLevel" type = "number" name = "attr_NextLevel" value = "300" />
     </div>
     <div class = "sheet-SpellcastingInfo">
         <select class = "sheet-SpellAbility" name = "attr_Spellcasting_Ability">
@@ -309,4 +308,5 @@
             <input type = "text" value = "0" />
         </div>
     </div>
+    <input class = "sheet-Proficiency" type = "number" name = "attr_Proficiency" value = "[[ceil(((@{Level})/4)+1)]]" disabled />
 </div>
