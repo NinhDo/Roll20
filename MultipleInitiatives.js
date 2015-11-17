@@ -61,7 +61,8 @@ on("chat:message", function(msg) {
                 sendChat(msg.who, "/roll 1d20 + " + mod + " !initiative " + name + m);
             }
         } else {
-                sendChat(msg.who, "/roll 1d20 + " + mod + " !initiative " + name);
+            name = name.substring(0, name.length - 1);
+            sendChat(msg.who, "/roll 1d20 + " + mod + " !initiative " + name);
         }
     }
 });
