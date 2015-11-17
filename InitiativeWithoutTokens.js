@@ -32,7 +32,6 @@ on("chat:message", function(msg) {
         var text = msgP.rolls[2].text;
         var textSplit = text.split(" ");
         var roller = (textSplit[textSplit.length - 1].toLowerCase() == "!initiative")?msg.who:textSplit[textSplit.length - 1];
-        log(roller);
         var turnorder = (Campaign().get("turnorder") == "") ? [] : JSON.parse(Campaign().get("turnorder"));
         turnorder.push({
             id: "-1",
