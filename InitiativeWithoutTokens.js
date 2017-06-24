@@ -2,7 +2,7 @@
 Github:     https://github.com/NinhDo/Roll20/blob/master/InitiativeWithoutTokens.js
 By:         Ninh Do
 Contact:    https://app.roll20.net/users/190323/ninh
-Version:    1.3
+Version:    1.4
 
 #########################
 Initiative without tokens
@@ -28,6 +28,10 @@ Will add "John" in the turn order
 
 VERSION 1.3 CHANGES
 Added support for inline rolls
+
+VERSION 1.4 CHANGES
+Allow roll flags in the middle of rolls
+e.g /roll 1d6+?{Dex Modifier|0}[DexModifier] !initiative
 */
 
 var InitiativeWithoutTokens = InitiativeWithoutTokens || {};
@@ -41,10 +45,13 @@ InitiativeWithoutTokens.PushInitiative = function (character, order, uniqueId = 
 };
 
 InitiativeWithoutTokens.AddInitiativeByRollInfo = function (rollInfo, roller) {
-    if(rollInfo.rolls.length >= 2) {
-        var textSplit = rollInfo.rolls[2].text.split(InitiativeWithoutTokens.ChatTag);
-        if(textSplit[textSplit.length - 1] !== "") {
-            roller = textSplit[textSplit.length - 1];
+    for(x = rollInfo.rolls.length; x >= 0; --x) {
+        if(rollInfo.rolls[x] && rollInfo.rolls[x].type == "C" && rollInfo.rolls[x].text.indexOf(InitiativeWithoutTokens.ChatTag) !== -1) {
+            var textSplit = rollInfo.rolls[x].text.split(InitiativeWithoutTokens.ChatTag);
+            if(textSplit[textSplit.length - 1] !== "") {
+                roller = textSplit[textSplit.length - 1];
+            }
+            break;
         }
     }
     InitiativeWithoutTokens.PushInitiative(roller, rollInfo.total);
