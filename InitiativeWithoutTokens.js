@@ -2,7 +2,7 @@
 Github:     https://github.com/NinhDo/Roll20/blob/master/InitiativeWithoutTokens.js
 By:         Ninh Do
 Contact:    https://app.roll20.net/users/190323/ninh
-Version:    1.2
+Version:    1.3
 
 #########################
 Initiative without tokens
@@ -25,21 +25,42 @@ You can now add text at THE END of the roll, and that name will be added to the 
 For example:
 /r d20+5 !initiative John
 Will add "John" in the turn order
+
+VERSION 1.3 CHANGES
+Added support for inline rolls
 */
+
+var InitiativeWithoutTokens = InitiativeWithoutTokens || {};
+
+InitiativeWithoutTokens.ChatTag = "!initiative";
+
+InitiativeWithoutTokens.PushInitiative = function (character, order, uniqueId = "-1") {
+    var turnorder = (Campaign().get("turnorder") == "") ? [] : JSON.parse(Campaign().get("turnorder"));
+    turnorder.push({ id: uniqueId, pr: order, custom: character });
+    Campaign().set("turnorder", JSON.stringify(turnorder));
+};
+
+InitiativeWithoutTokens.AddInitiativeByRollInfo = function (rollInfo, roller) {
+    if(rollInfo.rolls.length >= 2) {
+        var textSplit = rollInfo.rolls[2].text.split(InitiativeWithoutTokens.ChatTag);
+        if(textSplit[textSplit.length - 1] !== "") {
+            roller = textSplit[textSplit.length - 1];
+        }
+    }
+    InitiativeWithoutTokens.PushInitiative(roller, rollInfo.total);
+};
+
 on("chat:message", function(msg) {
-    if(msg.content.toLowerCase().indexOf("!initiative") !== -1) {
-        var msgP = JSON.parse(msg.content);
-        var text = msgP.rolls[2].text;
-        var textSplit = text.split(" ");
-        var roller = (textSplit[textSplit.length - 1].toLowerCase() == "!initiative")?msg.who:textSplit[textSplit.length - 1];
-        var turnorder = (Campaign().get("turnorder") == "") ? [] : JSON.parse(Campaign().get("turnorder"));
-        turnorder.push({
-            id: "-1",
-            pr: msgP.total,
-            custom: roller
-        });
-        Campaign().set("turnorder", JSON.stringify(turnorder));
-    } else {
-        return;
+    if(msg.content.toLowerCase().indexOf(InitiativeWithoutTokens.ChatTag) !== -1) {
+        InitiativeWithoutTokens.AddInitiativeByRollInfo(JSON.parse(msg.content), msg.who);
+    }
+    
+    if(msg.inlinerolls) {
+        for (x = 0; x < msg.inlinerolls.length; ++x) {
+            if(msg.inlinerolls[x] && msg.inlinerolls[x].expression.toLowerCase().indexOf(InitiativeWithoutTokens.ChatTag) !== -1 && msg.inlinerolls[x].results) {
+                InitiativeWithoutTokens.AddInitiativeByRollInfo(msg.inlinerolls[x].results, msg.who);
+            }
+        }
     }
 });
+
